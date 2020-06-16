@@ -10,12 +10,28 @@
 </script>
 
 <style>
+	img {
+		display: block;
+		margin: 2rem auto .5rem;
+		max-width: 77px;
+		border-radius: 100%;
+		border: 3px solid #454545;
+	}
+	.name {
+		font-family: 'Times New Roman', Times, serif;
+		font-size: x-large;
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 1rem;
+		color: #ffffff;
+	}
 	nav {
 		display: flex;
 		font-weight: 300;
 		padding: 0 1rem;
+		margin: 1rem;
+		border-radius: 10px;
 		background: #ffffff;
-		border-bottom: 1px solid #ddd;
 	}
 
 	ul {
@@ -44,10 +60,11 @@
 		position: absolute;
 		content: '';
 		width: calc(100% - 1em);
-		height: 2px;
+		height: 5px;
 		display: block;
+		border-radius: 20rem;
 		bottom: -1px;
-		background-color: saddlebrown;
+		background-color: #a5283a;
 	}
 
 	a {
@@ -59,8 +76,11 @@
 	button {
 		cursor: pointer;
 		outline: none;
-		margin-left: auto;
+		padding: 0;
+		margin: 0 10px 0 auto;
+		font-weight: 300;
 		font-size: medium;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		border: none;
 		background: none;
 	}
@@ -80,10 +100,15 @@
 
 	@media only screen and (min-width: 784px) {
 		nav {
-			padding: 0 calc(100vw - 60em);
+			margin: 0 calc(100vw - 60em - 4px) 1.5rem;
 		}
 	}
 </style>
+
+<div class="header">
+  <img src="/images/logo-192.png" alt="Avatar pic of bramaudi">
+	<div class="name">bramaudi</div>
+</div>
 
 <nav class:dark={$theme === 'dark'}>
 	<ul>

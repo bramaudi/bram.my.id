@@ -25,6 +25,6 @@
 <title>Tags "{tags}"</title>
 </svelte:head>
 
-<h1>Tags "{tags}"</h1>
+<h3>Tags "{tags}"</h3>
 
 <PostList {posts} />

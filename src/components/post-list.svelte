@@ -4,7 +4,8 @@ export let posts
 
 <style>
 	ul {
-    padding: 0 1.5rem;
+    list-style: none;
+    padding: 0;
 		margin: 0 0 1em 0;
 		line-height: 1.5;
   }
@@ -16,6 +17,10 @@ export let posts
   a {
     text-decoration: none;
     border-bottom: 1px dotted #888888;
+  }
+  li:before {
+    content: "\2023";
+    margin-right: 10px;
   }
 </style>
 

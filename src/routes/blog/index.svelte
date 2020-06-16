@@ -30,7 +30,7 @@ label {
 	font-size: large;	
 }
 input {
-	margin: 0 0 10px;
+	margin: 10px 0;
 	padding: 8px;
 	font-family: inherit;
 	background: #fff;
@@ -43,7 +43,7 @@ input {
 }
 </style>
 
-<h1>All Posts</h1>
+<h3>All Posts</h3>
 <form class:dark={$theme === 'dark'}>
 	<label for="search">Search</label>
 	<input type="text" id="search" bind:value={keyword} placeholder="Type post title">

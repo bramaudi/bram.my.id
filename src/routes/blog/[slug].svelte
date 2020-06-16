@@ -14,6 +14,7 @@
 </script>
 
 <script>
+	import Tags from '../../components/tags.svelte'
 	export let post;
 </script>
 
@@ -24,15 +25,12 @@
 .title {
 	font-weight: bold;
 	font-size: xx-large;
-	margin: .4rem 0;
+	margin: 0 0 .4rem;
 	line-height: 2.5rem;
 }
 .date {
 	margin-top: 5px;
 	color: #888888;
-}
-.tags {
-	margin: 0;
 }
 </style>
 
@@ -44,15 +42,11 @@
 </svelte:head>
 
 <div class="heading">
+	<div class="title">{post.title}</div>
 	<div class="date">{post.date}</div>
-	<div class="tags">
-		{#each post.tags as tag}
-			<a href="blog/tags/{tag}">{tag}</a>
-		{/each}
-	</div>
+	<Tags tags={post.tags} />
 </div>
 
-<div class="title">{post.title}</div>
 <div class='markdown-body'>
 	{@html post.html}
 </div>

@@ -6,6 +6,7 @@
 </script>
 
 <script>
+ import Tags from '../../../components/tags.svelte'
 	export let tags
 </script>
 
@@ -13,10 +14,5 @@
 <title>Tags</title>
 </svelte:head>
 
-<h1>Blog Tags</h1>
-
-<div class="tags">
-	{#each tags as tag}
-		<a href="blog/tags/{tag}">{tag}</a>
-	{/each}
-</div>
+<h3>Blog Tags</h3>
+<Tags {tags} />

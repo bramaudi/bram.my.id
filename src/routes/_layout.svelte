@@ -5,7 +5,11 @@
 
 	onMount(() => {
 		const ls = window.localStorage
-		ls.setItem('theme', $theme)
+		if (ls.getItem('theme')) {
+			$theme = ls.getItem('theme')
+		} else {
+			ls.setItem('theme', $theme)
+		}
 	})
 
 	export let segment;
@@ -15,9 +19,17 @@
 	main {
 		position: relative;
 		max-width: 56em;
-		padding: 2em;
-		margin: 0 auto;
+		padding: 20px;
+		margin: 0 1rem 1rem;
 		box-sizing: border-box;
+		border-radius: 1rem;
+		background: #ffffff;
+	}
+
+	@media only screen and (min-width: 784px) {
+		main {
+			margin: 0 calc(100vw - 60em - 4px) 2rem;
+		}
 	}
 </style>
 
@@ -37,6 +49,14 @@
 	body {
 		background: #242424;
 		color: #dedede;
+	}
+
+	main {
+		background: #333 !important;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #fff;
 	}
 
 	.tags a {
