@@ -121,6 +121,9 @@
 	}
 
 	@media only screen and (min-width: 784px) {
+		.name {
+			margin-bottom: 1.5rem;
+		}
 		nav {
 			margin: 0 calc(100vw - 60em - 4px) 1.5rem;
 		}

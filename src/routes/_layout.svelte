@@ -28,6 +28,7 @@
 
 	@media only screen and (min-width: 784px) {
 		main {
+			padding: 2rem;
 			margin: 0 calc(100vw - 60em - 4px) 2rem;
 		}
 	}
