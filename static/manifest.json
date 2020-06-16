@@ -1,8 +1,8 @@
 {
-	"background_color": "#ffffff",
-	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"background_color": "#5f9ea0",
+	"theme_color": "#5f9ea0",
+	"name": "bramaudi",
+	"short_name": "bram",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [
