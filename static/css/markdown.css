@@ -50,8 +50,9 @@ code {
   padding: .2em .4em;
   margin: 0;
   font-size: 85%;
-  background-color: #b0bfcc;
   border-radius: 3px;
+  white-space: nowrap;
+  background-color: #b0bfcc;
 }
 
 pre > code {
