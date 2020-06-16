@@ -1,5 +1,6 @@
 <script>
-export let posts
+  import { theme } from '../stores.js'
+  export let posts
 </script>
 
 <style>
@@ -15,6 +16,7 @@ export let posts
     color: #888888;
   }
   a {
+    color: #a5283a;
     text-decoration: none;
     border-bottom: 1px dotted #888888;
   }
@@ -22,9 +24,12 @@ export let posts
     content: "\2023";
     margin-right: 10px;
   }
+  .dark a {
+    color: cadetblue
+  }
 </style>
 
-<ul class="posts-list">
+<ul class="posts-list" class:dark={$theme === 'dark'}>
 	{#if !posts.length}
 		<li>There is no posts found.</li>
 	{/if}

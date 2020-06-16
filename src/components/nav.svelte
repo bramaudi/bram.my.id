@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte'
 	import { theme } from '../stores.js'
 	export let segment;
 	
@@ -7,6 +8,27 @@
 		const newTheme = $theme === 'dark' ? theme.set('light') : theme.set('dark')
 		ls.setItem('theme', $theme)
 	}
+
+	onMount(() => {
+		// config
+		const radius = 3; 
+		const steps = 24;
+		const blur = 0.02;
+		const color = '#fff';
+		// generate text shadows, spread evenly around a circle
+		const radianStep = steps / (Math.PI * 2);
+		let cssStr = '';
+		for(let i=0; i < steps; i++) {
+			const curRads = radianStep * i;
+			const xOffset = (radius * Math.sin(curRads)).toFixed(1);
+			const yOffset = (radius * Math.cos(curRads)).toFixed(1);
+			if(i > 0) cssStr += ", ";
+			cssStr += xOffset + "px " + yOffset + "px " + blur + "px " + color;
+		}
+		// apply text-shadow to element & output code
+		document.querySelector('.name').style.textShadow = cssStr;
+	})
+
 </script>
 
 <style>
@@ -15,16 +37,16 @@
 		margin: 2rem auto .5rem;
 		max-width: 77px;
 		border-radius: 100%;
-		border: 3px solid #454545;
+		border: 3px solid #ffffff;
 	}
 	.name {
-		font-family: 'Times New Roman', Times, serif;
 		font-size: x-large;
 		font-weight: bold;
 		text-align: center;
-		margin-bottom: 1rem;
-		color: #ffffff;
+		color: cadetblue;
+		margin: 0;
 	}
+
 	nav {
 		display: flex;
 		font-weight: 300;
@@ -63,7 +85,7 @@
 		height: 5px;
 		display: block;
 		border-radius: 20rem;
-		bottom: -1px;
+		bottom: 7px;
 		background-color: #a5283a;
 	}
 
@@ -92,7 +114,7 @@
 		border-color: #525252;
 	}
 	.dark [aria-current]::after {
-		background: #aaaaaa
+		background: cadetblue
 	}
 	.dark button {
 		color: #ffffff
@@ -108,6 +130,7 @@
 <div class="header">
   <img src="/images/logo-192.png" alt="Avatar pic of bramaudi">
 	<div class="name">bramaudi</div>
+	<code></code>
 </div>
 
 <nav class:dark={$theme === 'dark'}>

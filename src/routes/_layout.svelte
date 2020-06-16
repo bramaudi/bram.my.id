@@ -59,11 +59,6 @@
 		color: #fff;
 	}
 
-	.tags a {
-		background: #454545;
-		color: #ffffff;
-	}
-
 	table th, table td {
 		border: 1px solid #333333;
 	}
