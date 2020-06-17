@@ -3,6 +3,7 @@
 	import { theme } from '../stores.js'
 	import BackToTop from '../components/back-to-top.svelte'
 	import Nav from '../components/nav.svelte';
+	import Preloading from '../components/preloading.svelte'
 
 	onMount(() => {
 		const ls = window.localStorage
@@ -90,6 +91,7 @@
 <BackToTop />
 <Nav {segment}/>
 
+<Preloading />
 <main class:dark={$theme === 'dark'}>
 	<slot></slot>
 </main>
