@@ -30,6 +30,7 @@ label {
 	font-size: large;	
 }
 input {
+	outline: none;
 	margin: 10px 0;
 	padding: 8px;
 	font-family: inherit;
