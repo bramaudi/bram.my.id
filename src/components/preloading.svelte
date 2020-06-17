@@ -18,7 +18,7 @@ div {
   max-width: 56em;
   width: 0;
   margin: 1rem;
-  padding: 5px;
+  padding: 2px;
   animation: loading 1s forwards;
   border-radius: 1rem;
   border: none;
