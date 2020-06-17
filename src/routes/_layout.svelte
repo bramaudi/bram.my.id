@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { theme } from '../stores.js'
+	import BackToTop from '../components/back-to-top.svelte'
 	import Nav from '../components/nav.svelte';
 
 	onMount(() => {
@@ -86,6 +87,7 @@
 	{/if}
 </svelte:head>
 
+<BackToTop />
 <Nav {segment}/>
 
 <main class:dark={$theme === 'dark'}>
