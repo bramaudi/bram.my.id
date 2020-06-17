@@ -22,6 +22,7 @@
 .back-to-top {
   outline: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   content: ' \25B2';
   width: 50px;
   height: 50px;
