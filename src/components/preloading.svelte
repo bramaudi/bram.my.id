@@ -17,10 +17,12 @@ div {
   box-sizing: border-box;
   max-width: 56em;
   width: 0;
-  margin: 1rem;
+  margin: -1.0rem 1.7rem 11.5px;
   padding: 2px;
   animation: loading 1s forwards;
   border-radius: 1rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   border: none;
   background: #a5283a;
 }
@@ -70,7 +72,12 @@ div {
 }
 @media only screen and (min-width: 784px) {
   div {
-    margin: 2rem calc(100vw - 60em - 4px);
+    margin: -1.5rem 4.5rem 19.5px;
+  }
+  @keyframes loading {
+    100% {
+      width: 80%
+    }
   }
 }
 </style>
