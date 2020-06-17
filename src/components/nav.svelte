@@ -133,7 +133,6 @@
 <div class="header">
   <img src="/images/logo-192.png" alt="Avatar pic of bramaudi">
 	<div class="name">bramaudi</div>
-	<code></code>
 </div>
 
 <nav class:dark={$theme === 'dark'}>
