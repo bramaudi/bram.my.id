@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte'
 	import { theme } from '../stores.js'
 	export let segment;
 	
@@ -8,27 +7,6 @@
 		const newTheme = $theme === 'dark' ? theme.set('light') : theme.set('dark')
 		ls.setItem('theme', $theme)
 	}
-
-	onMount(() => {
-		// config
-		const radius = 3; 
-		const steps = 24;
-		const blur = 0.02;
-		const color = '#fff';
-		// generate text shadows, spread evenly around a circle
-		const radianStep = steps / (Math.PI * 2);
-		let cssStr = '';
-		for(let i=0; i < steps; i++) {
-			const curRads = radianStep * i;
-			const xOffset = (radius * Math.sin(curRads)).toFixed(1);
-			const yOffset = (radius * Math.cos(curRads)).toFixed(1);
-			if(i > 0) cssStr += ", ";
-			cssStr += xOffset + "px " + yOffset + "px " + blur + "px " + color;
-		}
-		// apply text-shadow to element & output code
-		document.querySelector('.name').style.textShadow = cssStr;
-	})
-
 </script>
 
 <style>
@@ -45,6 +23,7 @@
 		text-align: center;
 		color: cadetblue;
 		margin: 0;
+		text-shadow: rgb(255, 255, 255) 0px 3px 0.02px, rgb(255, 255, 255) -1.9px -2.3px 0.02px, rgb(255, 255, 255) 2.9px 0.6px 0.02px, rgb(255, 255, 255) -2.7px 1.3px 0.02px, rgb(255, 255, 255) 1.2px -2.7px 0.02px, rgb(255, 255, 255) 0.7px 2.9px 0.02px, rgb(255, 255, 255) -2.4px -1.8px 0.02px, rgb(255, 255, 255) 3px -0.1px 0.02px, rgb(255, 255, 255) -2.3px 2px 0.02px, rgb(255, 255, 255) 0.5px -3px 0.02px, rgb(255, 255, 255) 1.4px 2.6px 0.02px, rgb(255, 255, 255) -2.8px -1.2px 0.02px, rgb(255, 255, 255) 2.9px -0.8px 0.02px, rgb(255, 255, 255) -1.7px 2.5px 0.02px, rgb(255, 255, 255) -0.2px -3px 0.02px, rgb(255, 255, 255) 2px 2.2px 0.02px, rgb(255, 255, 255) -3px -0.4px 0.02px, rgb(255, 255, 255) 2.6px -1.5px 0.02px, rgb(255, 255, 255) -1.1px 2.8px 0.02px, rgb(255, 255, 255) -0.9px -2.8px 0.02px, rgb(255, 255, 255) 2.5px 1.6px 0.02px, rgb(255, 255, 255) -3px 0.3px 0.02px, rgb(255, 255, 255) 2.1px -2.1px 0.02px, rgb(255, 255, 255) -0.3px 3px 0.02px;
 	}
 
 	nav {
