@@ -14,7 +14,6 @@
 
 <style>
 div {
-  box-sizing: border-box;
   max-width: 56em;
   width: 0;
   margin: -1.0rem 1.7rem 11.5px;
@@ -67,21 +66,25 @@ div {
     width: 80%;
   }
   100% {
-    width: 90%;
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  @keyframes loading {
+    100% {
+      width: 70vw;
+    }
   }
 }
 @media only screen and (min-width: 784px) {
   div {
     margin: -1.5rem 4.5rem 19.5px;
   }
-  @keyframes loading {
-    100% {
-      width: 80%
-    }
-  }
 }
 </style>
 
-{#if showDelay}
+  <div class:dark={$theme === 'dark'}> </div>
+
+<!-- {#if showDelay}
   <div class:dark={$theme === 'dark'} class:hide={!$preloading}> </div>
-{/if}
+{/if} -->
