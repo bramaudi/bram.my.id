@@ -49,7 +49,7 @@
 		background: #696969;
 	}
 
-	body {
+	html {
 		background: #242424;
 		color: #dedede;
 	}
