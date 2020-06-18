@@ -42,12 +42,12 @@ span {
   width: 10px;
   position: absolute;
   top: 15px;
-  right: 15px;
+  right: 17px;
   transform: rotate(45deg);
   border: 1px solid #000000;
 }
 span + span {
-  left: 15px;
+  left: 17px;
   transform: rotate(-45deg);
 }
 .back-to-top.hide {
