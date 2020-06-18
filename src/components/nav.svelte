@@ -101,6 +101,9 @@
 	}
 
 	@media only screen and (min-width: 784px) {
+		img {
+			max-width: 100px;
+		}
 		.name {
 			margin-bottom: 1.5rem;
 		}
