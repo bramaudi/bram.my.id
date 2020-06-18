@@ -27,6 +27,7 @@
 	}
 
 	nav {
+		max-width: 56em;
 		display: flex;
 		font-weight: 300;
 		padding: 0 1rem;
@@ -104,7 +105,7 @@
 			margin-bottom: 1.5rem;
 		}
 		nav {
-			margin: 0 calc(100vw - 60em - 4px) 1.5rem;
+			margin: 0 auto 1rem;
 		}
 	}
 </style>

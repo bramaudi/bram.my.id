@@ -78,7 +78,7 @@ div {
 }
 @media only screen and (min-width: 784px) {
   div {
-    margin: -1.5rem 4.5rem 19.5px;
+    margin: -1.0rem 4.5rem 12px;
   }
 }
 </style>
