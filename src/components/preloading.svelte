@@ -83,8 +83,6 @@ div {
 }
 </style>
 
-  <div class:dark={$theme === 'dark'}> </div>
-
-<!-- {#if showDelay}
+{#if showDelay}
   <div class:dark={$theme === 'dark'} class:hide={!$preloading}> </div>
-{/if} -->
+{/if}
