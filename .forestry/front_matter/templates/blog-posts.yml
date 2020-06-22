@@ -21,5 +21,9 @@ fields:
   type: tag_list
   default: []
   label: Tags
+- name: draft
+  type: boolean
+  label: Draft
+  default: false
 pages:
 - src/posts/testing-forestry-posts.md
