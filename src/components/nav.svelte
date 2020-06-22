@@ -18,6 +18,7 @@
 		border: 3px solid #ffffff;
 	}
 	.name {
+		user-select: none;
 		font-size: x-large;
 		font-weight: bold;
 		text-align: center;

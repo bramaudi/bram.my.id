@@ -19,8 +19,8 @@ img {
 
 <p>That image was a cute little dog, <strong>not me</strong>.</p>
 
-<p>I am is a Full-stack web developer, not working for any companies (not yet) but i have contribute on some organizations (like my own organization for example).</p>
+<p>I am is a Full-stack web developer, but sometimes i also draw some art design and writing an article.</p>
 
 <p>Programming is not my main hobby but it was my passion (even though sometimes i feel worried about my future), and my other hobbies are drawing, read & writing, that's it.</p>
 
-<p>By the way, thanks for wasting your time by read "about me", it was so meaningful for me &hearts;</p>
+<p>By the way, thanks for wasting your time by reading my "about me", it was so meaningful for me &hearts;</p>
