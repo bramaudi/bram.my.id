@@ -37,7 +37,6 @@ table tr:nth-child(2n) {
 
 img {
   max-width: 100%;
-  box-sizing: initial;
 }
 img[align=right] {
   padding-left: 20px;
