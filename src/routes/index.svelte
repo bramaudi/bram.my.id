@@ -18,7 +18,7 @@
 </svelte:head>
 
 <h3>Recent posts</h3>
-<PostList posts={posts.slice(0, 10)} />
+<PostList posts={posts[0]} />
 
 <h3>Tags</h3>
 <Tags tags={tags.slice(0, 10)} />

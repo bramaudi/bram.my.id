@@ -1,7 +1,7 @@
 <script context="module">
 	export function preload({ params, query }) {
 		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
-			return { posts };
+      return { posts, query };
 		});
 	}
 </script>
@@ -9,7 +9,10 @@
 <script>
 	import { theme } from '../../stores.js'
 	import PostList from '../../components/post-list.svelte'
+	import Pagination from '../../components/pagination.svelte'
 	export let posts
+	export let query
+	$: current = query.page || 1
 	let keyword = ''
 
 	function filteredPosts(posts, keyword) {
@@ -51,7 +54,9 @@ input {
 </form>
 
 {#if keyword === ''}
-	<PostList {posts} />
+	<PostList posts={posts[current -1]} />
 {:else}
-	<PostList posts={filteredPosts(posts, keyword)} />
+	<PostList posts={filteredPosts(posts[current -1], keyword)} />
 {/if}
+
+<Pagination {current} count={posts.length} />
