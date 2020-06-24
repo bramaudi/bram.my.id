@@ -1,36 +1,33 @@
 ---
 tags: []
 title: Testing forestry posts
-date: 2020-06-21 10:00:00
+date: 2020-06-21T10:00:00.000+00:00
+draft: false
 
 ---
-# sapper-template
-
 This are forked repo from the original [Sapper](https://github.com/sveltejs/sapper) repo, i am working on rollup template at master branch.2020-06-22 20:27:53
 
 ## Added feature
 
 This fork added these following feaure:
 
-- [x] Markdown posts
-- [x] Custom front-matter
-- [x] Tags feature in post
-- [x] Toggle dark theme
-- [ ] Posts pagination
+* \[x\] Markdown posts
+* \[x\] Custom front-matter
+* \[x\] Tags feature in post
+* \[x\] Toggle dark theme
+* \[ \] Posts pagination
 
 ## Structure
 
 Sapper expects to find two directories in the root of your project —  `src` and `static`.
 
-
 ### src
 
 The [src](src) directory contains the entry points for your app — `client.js`, `server.js` and (optionally) a `service-worker.js` — along with a `template.html` file and a `routes` directory.
 
-
 #### src/routes
 
-This is the heart of your Sapper app. There are two kinds of routes — *pages*, and *server routes*.
+This is the heart of your Sapper app. There are two kinds of routes — _pages_, and _server routes_.
 
 **Pages** are Svelte components written in `.svelte` files. When a user first visits the application, they will be served a server-rendered version of the route in question, plus some JavaScript that 'hydrates' the page and initialises a client-side router. From that point forward, navigating to other pages is handled entirely on the client for a fast, app-like feel. (Sapper will preload and cache the code for these subsequent pages, so that navigation is instantaneous.)
 
@@ -40,8 +37,7 @@ There are three simple rules for naming the files that define your routes:
 
 * A file called `src/routes/about.svelte` corresponds to the `/about` route. A file called `src/routes/blog/[slug].svelte` corresponds to the `/blog/:slug` route, in which case `params.slug` is available to the route
 * The file `src/routes/index.svelte` (or `src/routes/index.js`) corresponds to the root of your app. `src/routes/about/index.svelte` is treated the same as `src/routes/about.svelte`.
-* Files and directories with a leading underscore do *not* create routes. This allows you to colocate helper modules and components with the routes that depend on them — for example you could have a file called `src/routes/_helpers/datetime.js` and it would *not* create a `/_helpers/datetime` route
-
+* Files and directories with a leading underscore do _not_ create routes. This allows you to colocate helper modules and components with the routes that depend on them — for example you could have a file called `src/routes/_helpers/datetime.js` and it would _not_ create a `/_helpers/datetime` route
 
 ### static
 
@@ -55,11 +51,9 @@ import { files } from '@sapper/service-worker';
 
 ...so that you can cache them (though you can choose not to, for example if you don't want to cache very large files).
 
-
 ## Bundler config
 
 Sapper uses Rollup or webpack to provide code-splitting and dynamic imports, as well as compiling your Svelte components. With webpack, it also provides hot module reloading. As long as you don't do anything daft, you can edit the configuration files to add whatever plugins you'd like.
-
 
 ## Production mode and deployment
 
@@ -74,17 +68,15 @@ now
 
 If your app can't be exported to a static site, you can use the [now-sapper](https://github.com/thgh/now-sapper) builder. You can find instructions on how to do so in its [README](https://github.com/thgh/now-sapper#basic-usage).
 
-
 ## Using external components
 
 When using Svelte components installed from npm, such as [@sveltejs/svelte-virtual-list](https://github.com/sveltejs/svelte-virtual-list), Svelte needs the original component source (rather than any precompiled JavaScript that ships with the component). This allows the component to be rendered server-side, and also keeps your client-side app smaller.
 
-Because of that, it's essential that the bundler doesn't treat the package as an *external dependency*. You can either modify the `external` option under `server` in [rollup.config.js](rollup.config.js) or the `externals` option in [webpack.config.js](webpack.config.js), or simply install the package to `devDependencies` rather than `dependencies`, which will cause it to get bundled (and therefore compiled) with your app:
+Because of that, it's essential that the bundler doesn't treat the package as an _external dependency_. You can either modify the `external` option under `server` in [rollup.config.js](rollup.config.js) or the `externals` option in [webpack.config.js](webpack.config.js), or simply install the package to `devDependencies` rather than `dependencies`, which will cause it to get bundled (and therefore compiled) with your app:
 
 ```bash
 npm install -D @sveltejs/svelte-virtual-list
 ```
-
 
 ## Bugs and feedback
 
