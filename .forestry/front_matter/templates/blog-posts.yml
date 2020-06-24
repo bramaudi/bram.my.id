@@ -26,5 +26,3 @@ fields:
   type: boolean
   label: Draft
   default: false
-pages:
-- src/posts/testing-forestry-posts.md
