@@ -19,7 +19,8 @@ fields:
     export_format: YYYY-MM-DD HH:mm:ss
 - name: tags
   type: tag_list
-  default: []
+  default:
+  - uncategorized
   label: Tags
 - name: draft
   type: boolean
