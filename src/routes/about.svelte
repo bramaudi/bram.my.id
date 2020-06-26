@@ -4,30 +4,15 @@
 
 <style>
 .wrapper {
-  padding: 2rem 20px;
-}
-img {
-	display: block;
-	margin: auto 2rem 0;
-	float: left;
-	max-width: 100px;
+  padding: 20px;
 }
 </style>
 
 <div class="wrapper">
-  <img src="images/lil_bro.png" alt="smile dogs">
+  <h2>Brama Udi</h2>
+  <p>A guy who spend his free time in a web development. (<strong>Penangguran bang.</strong>)</p>
 
-  <h2>About Me</h2>
+  <p>It's me, a full-stack web developer, i working on some of my small projects and sometimes contribute to the open source projects, i also the member of <a href="//portaldesadigital.id">Portal Desa Digital</a> dev team.</p>
 
-  <p>My name's <strong>Brama Udi</strong>, someone who officialy have this site (of course).</p>
-
-  <br>
-
-  <p>That image was a cute little dog, <strong>not me</strong>.</p>
-
-  <p>I am is a Full-stack web developer, but sometimes i also draw some art design and writing an article.</p>
-
-  <p>Programming is not my main hobby but it was my passion (even though sometimes i feel worried about my future), and my other hobbies are drawing, read & writing, that's it.</p>
-
-  <p>By the way, thanks for wasting your time by reading my "about me", it was so meaningful for me &hearts;</p>
+  <!-- <p>Me as a graduate of vocational school don't have any certificates to show but i do create my portofolio that contains all of my works that you can <a href="/projects">see here</a>.</p> -->
 </div>

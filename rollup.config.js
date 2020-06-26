@@ -21,6 +21,7 @@ export default {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
+      json(),
 			markdown(),
 			glob(),
 			replace({
