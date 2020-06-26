@@ -14,14 +14,12 @@
 
 <style>
 div {
-  max-width: 56em;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 0;
-  margin: -1.0rem 1.7rem 11.5px;
-  padding: 2px;
-  animation: loading 1s forwards;
-  border-radius: 1rem;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  height: 5px;
+  animation: loading 2s forwards;
   border: none;
   background: #a5283a;
 }
@@ -63,10 +61,10 @@ div {
     width: 70%;
   }
   90% {
-    width: 80%;
+    width: 75%;
   }
   100% {
-    width: 80%;
+    width: 85%;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -78,11 +76,11 @@ div {
 }
 @media only screen and (min-width: 784px) {
   div {
-    margin: -1.0rem 4.5rem 12px;
+    
   }
 }
 </style>
 
 {#if showDelay}
-  <div class:dark={$theme === 'dark'} class:hide={!$preloading}> </div>
+  <div class:dark={$theme === 'dark'} class:hide={!$preloading}></div>
 {/if}
