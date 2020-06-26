@@ -2,10 +2,6 @@
   export let post
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" href="/css/markdown.css">
-</svelte:head>
-
 <style>
   .tags {
     display: block;
