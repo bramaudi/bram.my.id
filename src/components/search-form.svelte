@@ -16,7 +16,7 @@ input {
   position: relative;
   width: 100%;
   outline: none;
-	margin: 1rem 0 1rem;
+	margin: 1rem 0 0;
 	padding: 1rem;
   font-size: inherit;
   background: none;
@@ -37,7 +37,8 @@ input::placeholder {
 @media (min-width: 784px) {
   input {
     width: calc(100% - 2rem);
-    margin: 1rem
+    margin: 1rem;
+    margin-bottom: 0;
   }
 }
 </style>

@@ -14,5 +14,7 @@
 <title>Tags</title>
 </svelte:head>
 
-<h3>Blog Tags</h3>
-<Tags {tags} />
+<div class="wrapper">
+  <h3>Blog Tags</h3>
+  <Tags {tags} />
+</div>
