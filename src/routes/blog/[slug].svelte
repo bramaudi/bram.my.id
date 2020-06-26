@@ -19,19 +19,17 @@
 </script>
 
 <style>
-.heading {
-	font-size: small
-}
-.title {
-	font-weight: bold;
-	font-size: xx-large;
-	margin: 0 0 .4rem;
-	line-height: 2.5rem;
-}
-.date {
-	margin-top: 5px;
-	color: #888888;
-}
+  .post {
+    width: 100%;
+    float: unset;
+    margin-top: 1rem;
+  }
+  .title {
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 0 0 .4rem;
+    line-height: 2.5rem;
+  }
 </style>
 
 <svelte:head>
@@ -41,12 +39,14 @@
 	<link rel="stylesheet" href="css/prism.css">
 </svelte:head>
 
-<div class="heading">
-	<div class="title">{post.title}</div>
-	<div class="date">{post.date}</div>
-	<Tags tags={post.tags} />
-</div>
+<div class="post">
+  <div class="heading">
+    <div class="title">{post.title}</div>
+    <div class="date">{post.date}</div>
+    <Tags tags={post.tags} />
+  </div>
 
-<div class='markdown-body'>
-	{@html post.html}
+  <div class='markdown-body'>
+    {@html post.html}
+  </div>
 </div>

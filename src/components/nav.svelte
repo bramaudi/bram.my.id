@@ -28,18 +28,18 @@
 	}
 
 	nav {
-		max-width: 56em;
+    max-width: 55rem;
+    margin: auto;
+		padding: 0;
+  }
+
+	ul {
 		display: flex;
 		font-weight: 300;
 		padding: 0 1rem;
-		margin: 1rem;
+		margin: 1rem 1rem 0;
 		border-radius: 10px;
 		background: #ffffff;
-	}
-
-	ul {
-		margin: 0;
-		padding: 0;
 	}
 
 	/* clearfix */
@@ -70,26 +70,22 @@
 		background-color: #a5283a;
 	}
 
-	a {
+	a, span {
 		text-decoration: none;
 		padding: 1em 0.5em;
 		display: block;
 	}
 
-	button {
+  li:last-child {
+    margin-left: auto;
+  }
+
+	span {
 		cursor: pointer;
-		outline: none;
-		padding: 0;
-		margin: 0 10px 0 auto;
-		font-weight: 300;
-		font-size: medium;
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		border: none;
-		background: none;
 	}
 
 	/* Dark */
-	nav.dark {
+	.dark ul {
 		background: #333333;
 		color: #ffffff;
 		border-color: #525252;
@@ -97,7 +93,7 @@
 	.dark [aria-current]::after {
 		background: cadetblue
 	}
-	.dark button {
+	.dark span {
 		color: #ffffff
 	}
 
@@ -107,10 +103,10 @@
 		}
 		.name {
 			margin-bottom: 1.5rem;
-		}
-		nav {
-			margin: 0 auto 1rem;
-		}
+    }
+    nav {
+      padding: 0;
+    }
 	}
 </style>
 
@@ -127,7 +123,6 @@
 		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 		     the blog data when we hover over the link or tap it on a touchscreen -->
 		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
+    <li><span on:click={toggleTheme} type="button">{$theme}</span></li>
 	</ul>
-
-	<button on:click={toggleTheme} type="button">{$theme}</button>
 </nav>

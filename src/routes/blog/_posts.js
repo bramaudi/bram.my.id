@@ -20,30 +20,32 @@ const posts = []
 export const metaOnly = []
 
 all.map(({ metadata, html, filename }) => {
-	// "title", "date", "tags" are required frontmatter
-	// if not exist then mark it as a non-posts content
-	const { title, date, tags } = metadata
-
+  // required to be a valid content
+  const { type, tags, date } = metadata
 	// Set default tags if not defined
 	metadata.tags = tags || ['uncategorized']
 	// Format date
 	metadata.date = dateFormat(date)
 
-	if (title && date) {
+	if (type && date) {
 		const slug = slugify(filename)
-		const entry = {
-			...metadata,
-			html,
-			slug
-		}
+		
 		// Exclude if post has "draft" frontmatter
 		if (!metadata.draft) {
-			posts.push(entry)
+			posts.push({
+        ...metadata,
+        html,
+        slug
+      })
 
-			// Push for meta-only version
+      // Push for meta-only version
+      const quote = type === 'quote' ? { html } : {}
+      const quick = type === 'quick' ? { html } : {}
 			metaOnly.push({
 				...metadata,
-				slug
+        slug,
+        ...quote,
+        ...quick
 			})
 		}
 	}

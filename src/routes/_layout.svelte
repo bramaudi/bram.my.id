@@ -19,18 +19,17 @@
 
 <style>
 	main {
-		max-width: 56em;
-		padding: 20px;
-		margin: 0 1rem 1rem;
+		max-width: 55em;
+    margin: 0 1rem 1rem;
+    padding: 0;
 		box-sizing: border-box;
 		border-radius: 1rem;
-		background: #ffffff;
 	}
 
 	@media only screen and (min-width: 784px) {
 		main {
-			padding: 2rem;
-			margin: 0 auto;
+      margin: 0 auto;
+      padding-left: 0;
 		}
 	}
 </style>
@@ -51,10 +50,6 @@
 	html {
 		background: #242424;
 		color: #dedede;
-	}
-
-	main {
-		background: #333 !important;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -82,7 +77,20 @@
 	}
 	pre > code {
 		background: inherit !important;
-	}
+  }
+
+  .wrapper {
+    background: #333
+  }
+  
+  .post,.quote,.quick {
+    background: #333 !important
+  }
+
+  .quote {
+    border-color: #454545;
+    box-shadow: inset 0 0 20px 5px #222;
+  }
 	</style>
 	{/if}
 </svelte:head>

@@ -1,25 +1,43 @@
 <script context="module">
-	export async function preload({ params, query }) {
-		const posts = await this.fetch(`blog.json`).then(r => r.json())
-		const tags = await this.fetch(`blog/tags.json`).then(r => r.json())
-		return { posts, tags }
+	import SearchForm from './../components/search-form.svelte';
+	export function preload({ params, query }) {
+		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
+      return { posts, query };
+		});
 	}
 </script>
 
 <script>
-	import Tags from '../components/tags.svelte'
+  import { theme } from '../stores.js'
 	import PostList from '../components/post-list.svelte'
-	export let posts;
-	export let tags;
+	import Pagination from '../components/pagination.svelte'
+	export let posts
+	export let query
+	$: current = query.page || 1
+  let keyword = ''
+
+  function getKeyword(e) {
+    keyword = e.detail.keyword
+  }
+  
+	function filteredPosts(posts, keyword) {
+		return posts.filter(post => {
+			post = post.title ? post['title'].toLowerCase() : post['html'].toLowerCase()
+			return post.indexOf(keyword) > -1; 
+		});
+	}
 </script>
 
 <svelte:head>
 	<title>bramaudi</title>
 </svelte:head>
 
-<h3>Recent posts</h3>
-<PostList posts={posts[0]} />
+<SearchForm {keyword} on:connect={getKeyword} />
 
-<h3>Tags</h3>
-<Tags tags={tags.slice(0, 10)} />
-... see <a href="blog/tags">more tags</a>.
+{#if keyword === ''}
+	<PostList posts={posts[current -1]} />
+{:else}
+	<PostList posts={filteredPosts(posts[current -1], keyword)} />
+{/if}
+
+<Pagination {current} count={posts.length} />

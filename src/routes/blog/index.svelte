@@ -1,62 +1,27 @@
 <script context="module">
-	export function preload({ params, query }) {
-		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
-      return { posts, query };
-		});
+	export async function preload({ params, query }) {
+		const tags = await this.fetch(`blog/tags.json`).then(r => r.json())
+		return { tags }
 	}
 </script>
 
 <script>
-	import { theme } from '../../stores.js'
-	import PostList from '../../components/post-list.svelte'
-	import Pagination from '../../components/pagination.svelte'
-	export let posts
-	export let query
-	$: current = query.page || 1
-	let keyword = ''
-
-	function filteredPosts(posts, keyword) {
-		return posts.filter(post => {
-			post = post['title'].toLowerCase()
-			return post.indexOf(keyword) > -1; 
-		});
-	}
+ import Tags from '../../components/tags.svelte'
+	export let tags
 </script>
 
 <svelte:head>
 	<title>Blog</title>
 </svelte:head>
 
-<style>
-label {
-	display: block;
-	font-size: large;	
-}
-input {
-	outline: none;
-	margin: 10px 0;
-	padding: 8px;
-	font-family: inherit;
-	background: #fff;
-	border: 1px solid #aaa;
-}
-.dark input {
-	color: #fff;
-	background: #333333;
-	border-color: #aaaaaa;
-}
-</style>
+<div class="wrapper">
+  <h3>Expore by type</h3>
 
-<h3>All Posts</h3>
-<form class:dark={$theme === 'dark'}>
-	<label for="search">Search</label>
-	<input type="text" id="search" bind:value={keyword} placeholder="Type post title">
-</form>
+  <li><a href="blog/quotes">Quotes</a></li>
+  <li><a href="blog/posts">Posts</a></li>
 
-{#if keyword === ''}
-	<PostList posts={posts[current -1]} />
-{:else}
-	<PostList posts={filteredPosts(posts[current -1], keyword)} />
-{/if}
+  <br>
 
-<Pagination {current} count={posts.length} />
+  <h3>Blog Tags</h3>
+  <Tags {tags} />
+</div>
