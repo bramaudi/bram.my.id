@@ -20,7 +20,7 @@ fields:
 - name: title
   type: text
   config:
-    required: true
+    required: false
   label: Title
 - name: date
   type: datetime
@@ -50,3 +50,12 @@ fields:
   showOnly:
     field: type
     value: post
+- name: author
+  type: text
+  config:
+    required: true
+  label: Author
+  showOnly:
+    field: type
+    value: quotes
+  default: unknown
