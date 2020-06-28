@@ -2,6 +2,21 @@
 label: Blog Posts
 hide_body: false
 fields:
+- name: type
+  type: select
+  default: post
+  config:
+    required: true
+    options:
+    - quotes
+    - quick
+    - post
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Type
 - name: title
   type: text
   config:
@@ -26,3 +41,12 @@ fields:
   type: boolean
   label: Draft
   default: false
+- name: summary
+  type: text
+  config:
+    required: true
+  label: Summary
+  description: Post summary / excerpt
+  showOnly:
+    field: type
+    value: post
