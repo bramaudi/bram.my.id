@@ -4,14 +4,14 @@
   },
   "projects": [
     {
-      "name": "FBDown",
-      "info": "Facebook Video Downloader.",
+      "name": "fbdown",
+      "info": "Facebook video downloader, built in Preact",
       "url": "//fbdown.now.sh",
       "repo": "//github.com/bramaudi/fbdown"
     },
     {
-      "name": "Todo Swipe",
-      "info": "A simple PWA Todo with swipe.",
+      "name": "Todo",
+      "info": "A simple PWA Todo with swipe, built in Vue.",
       "url": "//todo-swipe.now.sh",
       "repo": "//github.com/bramaudi/todo"
     }
