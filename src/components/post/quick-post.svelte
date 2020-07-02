@@ -1,6 +1,7 @@
 <svelte:head>
-  <link rel="stylesheet" href="/css/prism.css">
-  <script src="/js/prism.js"></script>
+  <script src="js/prism.js"></script>
+	<link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="css/markdown.css">
 </svelte:head>
 
 <script>
@@ -13,7 +14,10 @@
     <h3>{post.title}</h3>
   {/if}
   
-  <Tags tags={post.tags} />
+  <div class="meta">
+    <div class="date">{post.date}</div>
+    <Tags tags={post.tags} />
+  </div>
 
   <div class="content">
     {@html post.html}

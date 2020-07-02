@@ -1,3 +1,9 @@
+<svelte:head>
+  <script src="js/prism.js"></script>
+	<link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="css/markdown.css">
+</svelte:head>
+
 <script>
 	import Tags from './../tags.svelte';
   export let post
@@ -32,8 +38,11 @@
   </div>
 
   {#if post.summary}
-    <div class="content">{@html makeExcerpt(post.summary)}</div>
+    <div class="content">
+      {@html makeExcerpt(post.summary)}
+      <a rel='prefetch' href='blog/{post.slug}'>Read more &raquo;</a>
+    </div>
+  {:else}
+    <a rel='prefetch' href='blog/{post.slug}'>Read more ...</a>
   {/if}
-
-  <a rel='prefetch' href='blog/{post.slug}'>Read more ...</a>
 </div>
