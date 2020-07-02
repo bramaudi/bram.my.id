@@ -17,8 +17,10 @@
 <div class="wrapper">
   <h3>Expore by type</h3>
 
-  <li><a href="blog/quotes">Quotes</a></li>
-  <li><a href="blog/posts">Posts</a></li>
+  <ul>
+    <li><a href="blog/quotes">Quotes</a></li>
+    <li><a href="blog/posts">Posts</a></li>
+  </ul>
 
   <br>
 
