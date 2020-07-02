@@ -4,7 +4,7 @@ h1,h2,h3,h4,h5,h6 {
 
 blockquote {
   margin: 1rem 0;
-  padding: 0 1em;
+  padding: 0 1em 0 .5rem;
   color: #6a737d;
   border-left: .25em solid #dfe2e5;
 }
@@ -13,6 +13,9 @@ blockquote>:first-child {
 }
 blockquote>:last-child {
   margin-bottom: 0;
+}
+blockquote code {
+  color: #222
 }
 
 table {
@@ -56,4 +59,10 @@ code {
 
 pre > code {
   padding: 0;
+  background: inherit;
+}
+
+pre[class*="language-"] {
+  border-radius: 5px;
+  font-size: small;
 }

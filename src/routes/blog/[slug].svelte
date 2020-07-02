@@ -30,13 +30,16 @@
     margin: 0 0 .4rem;
     line-height: 2.5rem;
   }
+  .markdown-body {
+    margin-top: 1.3rem;
+  }
 </style>
 
 <svelte:head>
 	<title>{post.title}</title>
-	<script src="js/prism.js" />
-	<link rel="stylesheet" href="css/markdown.css">
+  <script src="js/prism.js"></script>
 	<link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="css/markdown.css">
 </svelte:head>
 
 <div class="post">

@@ -72,6 +72,10 @@
 		border-color: #555555 !important;
 	}
 
+	blockquote code {
+		color: #dedede !important;
+	}
+
 	code {
 		background: #506475 !important;
 	}
