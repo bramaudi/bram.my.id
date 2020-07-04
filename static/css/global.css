@@ -31,7 +31,7 @@ a {
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: .5em;
-  height: .5em;
+  height: .2em;
 }
 ::-webkit-scrollbar-track {
   background: #f1f1f1;

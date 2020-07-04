@@ -8,26 +8,27 @@
   export let posts
 
   onMount(() => {
-    const el = document.querySelector('.grid').children
-    for (let i = 0; i < el.length; i++) {
-      el[i].style.height = (el[i].clientHeight + 20)+'px'
+    if (window.matchMedia( "(min-width: 784px)" ).matches) {
+      // Define static height to fix magicGrid
+      const el = document.querySelector('.grid').children
+      for (let i = 0; i < el.length; i++) {
+        el[i].style.height = (el[i].clientHeight + 20)+'px'
+      }
+  
+      execGrid()
     }
-
-    execGrid()
   })
 
   function execGrid() {
-    if (window.matchMedia( "(min-width: 784px)" ).matches) {
-      let magicGrid = new MagicGrid({
-        container: '.grid',
-        static: true,
-        animate: true,
-        useMin: true,
-        gutter: 10
-      })
-  
-      magicGrid.listen()    
-    }
+    let magicGrid = new MagicGrid({
+      container: '.grid',
+      static: true,
+      animate: true,
+      useMin: true,
+      gutter: 10
+    })
+
+    magicGrid.listen()
   }
 </script>
 
@@ -37,12 +38,12 @@
   }
   .grid > :global(div) {
     width: 100%;
+    margin-bottom: 10px;
   }
 
   @media (min-width: 784px) {
     .grid > :global(div) {
       width: calc((55rem / 2) - 20px);
-      
     }
   }
 </style>
