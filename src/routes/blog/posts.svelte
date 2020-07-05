@@ -13,10 +13,6 @@
   $: current = query.page || 1
 </script>
 
-<svelte:head>
-	<script src="js/prism.js"></script>
-</svelte:head>
-
 <PostList posts={posts[current -1]} />
 
 <Pagination {current} count={posts.length} />

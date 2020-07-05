@@ -30,7 +30,6 @@
 
 <svelte:head>
 	<title>bramaudi</title>
-	<script src="js/prism.js"></script>
 </svelte:head>
 
 <SearchForm {keyword} on:connect={getKeyword} />

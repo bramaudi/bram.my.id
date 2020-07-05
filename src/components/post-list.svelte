@@ -33,6 +33,7 @@
 
 <svelte:head>
   <script src="js/magic-grid.min.js"></script>
+	<script src="js/prism.js"></script>
 </svelte:head>
 
 <style>
