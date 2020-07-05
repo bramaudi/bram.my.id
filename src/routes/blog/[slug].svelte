@@ -20,9 +20,9 @@
 
 <style>
   .post {
-    width: 100%;
+    width: calc(100% - 30px);
     float: unset;
-    margin-top: 1rem;
+    margin: 1rem auto;
   }
   .title {
     font-weight: bold;
