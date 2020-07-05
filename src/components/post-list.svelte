@@ -1,5 +1,4 @@
 <script>
-  import MagicGrid from 'magic-grid';
 	import FullPost from './post/full-post.svelte';
 	import QuickPost from './post/quick-post.svelte';
 	import Quote from './post/quote.svelte';
@@ -31,6 +30,10 @@
     magicGrid.listen()
   }
 </script>
+
+<svelte:head>
+  <script src="js/magic-grid.min.js"></script>
+</svelte:head>
 
 <style>
   .grid {
