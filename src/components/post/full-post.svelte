@@ -1,9 +1,3 @@
-<svelte:head>
-  <script src="js/prism.js"></script>
-	<link rel="stylesheet" href="css/prism.css">
-	<link rel="stylesheet" href="css/markdown.css">
-</svelte:head>
-
 <script>
 	import Tags from './../tags.svelte';
   export let post

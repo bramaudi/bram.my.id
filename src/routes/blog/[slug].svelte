@@ -37,9 +37,7 @@
 
 <svelte:head>
 	<title>{post.title}</title>
-  <script src="js/prism.js"></script>
-	<link rel="stylesheet" href="css/prism.css">
-	<link rel="stylesheet" href="css/markdown.css">
+	<script src="js/prism.js"></script>
 </svelte:head>
 
 <div class="post">
