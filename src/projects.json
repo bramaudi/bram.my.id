@@ -1,0 +1,23 @@
+[
+  {
+    "name": "QRMan",
+    "info": "QR Code tools, scan with webcam / upload image, built with Svelte",
+    "logo": "https://qrman.now.sh/images/apple-touch-icon.png",
+    "url": "//qrman.now.sh",
+    "repo": "//github.com/bramaudi/qrman"
+  },
+  {
+    "name": "fbdown",
+    "info": "Facebook video downloader, built with Preact",
+    "logo": "https://fbdown.now.sh/assets/icons/apple-touch-icon.png",
+    "url": "//fbdown.now.sh",
+    "repo": "//github.com/bramaudi/fbdown"
+  },
+  {
+    "name": "Todo",
+    "info": "A simple PWA Todo with swipe, built with Vue",
+    "logo": "https://todo-swipe.now.sh/static/img/icons/apple-touch-icon-152x152.png",
+    "url": "//todo-swipe.now.sh",
+    "repo": "//github.com/bramaudi/todo"
+  }
+]

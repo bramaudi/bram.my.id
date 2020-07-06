@@ -1,25 +1,5 @@
 {
   "pagination": {
     "limit": 17
-  },
-  "projects": [
-    {
-      "name": "QRMan",
-      "info": "QR Code tools, scan with webcam / upload image, built with Svelte",
-      "url": "//qrman.now.sh",
-      "repo": "//github.com/bramaudi/qrman"
-    },
-    {
-      "name": "fbdown",
-      "info": "Facebook video downloader, built with Preact",
-      "url": "//fbdown.now.sh",
-      "repo": "//github.com/bramaudi/fbdown"
-    },
-    {
-      "name": "Todo",
-      "info": "A simple PWA Todo with swipe, built with Vue",
-      "url": "//todo-swipe.now.sh",
-      "repo": "//github.com/bramaudi/todo"
-    }
-  ]
+  }
 }
