@@ -21,8 +21,10 @@ input {
   font-size: inherit;
   background: none;
   border: none;
-  color: #fff;
-	border-bottom: 1px solid cadetblue;
+  border-radius: 10px;
+  background:#f0f0f0;
+  color: #222;
+	border: 2px solid #fff;
 }
 input::placeholder {
   color: #555;
@@ -31,7 +33,9 @@ input::placeholder {
   color: #888;
 }
 .dark input {
-	border-color: #333333;
+  background: #333;
+  color: #aaa;
+	border-color: #555;
 }
 
 @media (min-width: 784px) {
@@ -43,7 +47,7 @@ input::placeholder {
 }
 </style>
 
-<form class:dark={$theme === 'dark'}>
+<form on:submit={(e) => e.preventDefault()} class:dark={$theme === 'dark'}>
 	<input
     type="text"
     id="search"
