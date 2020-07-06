@@ -1,10 +1,10 @@
 <svelte:head>
   <title>Projects</title>
-  <script src="js/magic-grid.min.js"></script>
 </svelte:head>
 
 <script>
   import { onMount } from 'svelte';
+  import MagicGrid from 'magic-grid';
 	import { theme } from './../stores.js';
 	import Github from './../components/svg/github.svelte';
 	import Link from './../components/svg/link.svelte';

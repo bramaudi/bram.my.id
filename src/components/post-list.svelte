@@ -3,6 +3,7 @@
 	import QuickPost from './post/quick-post.svelte';
 	import Quote from './post/quote.svelte';
   import { theme } from '../stores.js';
+  import MagicGrid from 'magic-grid';
   import { onMount } from 'svelte';
   export let posts
 
@@ -19,7 +20,7 @@
   })
 
   function execGrid() {
-    let magicGrid = new MagicGrid({
+    const magicGrid = new MagicGrid({
       container: '.grid',
       static: true,
       animate: true,
@@ -30,10 +31,6 @@
     magicGrid.listen()
   }
 </script>
-
-<svelte:head>
-  <script src="js/magic-grid.min.js"></script>
-</svelte:head>
 
 <style>
   .grid {

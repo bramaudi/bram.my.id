@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "magic-grid": "^3.2.4",
     "polka": "next",
     "prismjs": "^1.20.0",
     "sirv": "^0.4.0"
