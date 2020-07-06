@@ -6,7 +6,7 @@
 </script>
 
 <script>
- import Tags from '../../../components/tags.svelte'
+	import Tags from '../../../components/tags.svelte'
 	export let tags
 </script>
 

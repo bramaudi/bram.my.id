@@ -1,5 +1,6 @@
 import all from '../../posts/**/*.md'
 import { parse } from 'path'
+import Prism from 'prismjs'
 
 const 	_slugify_strip_re = /[^\w\s-]/g;
 const _slugify_hyphenate_re = /[-\s]+/g;
@@ -26,6 +27,28 @@ all.map(({ metadata, html, filename }) => {
 	metadata.tags = tags || ['uncategorized']
 	// Format date
 	metadata.date = dateFormat(date)
+
+	// Decode html special character
+	function decodeEntities(encodedString) {
+		return encodedString
+			.replace(/&lt;/g, '<')
+			.replace(/&gt;/g, '>')
+	}
+
+	// Do highlight code
+	const regexAll = /<pre><code (\w+)="(\w+)(.[^>]*)?">(.[^<]*)?<\/code><\/pre>/gis
+	const regexOne = /<pre><code (\w+)="(\w+)(.[^>]*)?">(.[^<]*)?<\/code><\/pre>/
+	const fences = html.match(regexAll)
+
+	fences && fences.map(code => {
+		const partData = code.match(regexOne)
+		const highlighted = Prism.highlight(decodeEntities(partData[4]), Prism.languages[partData[2]], partData[2])
+		const preModified = (html.replace(partData[4], highlighted)).replace(
+			'<pre>',
+			`<pre ${partData[1]}="${partData[3].trim(' ')}">`
+		)
+		html = preModified
+	})
 
 	if (type && date) {
 		const slug = slugify(filename)

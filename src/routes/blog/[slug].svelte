@@ -37,7 +37,6 @@
 
 <svelte:head>
 	<title>{post.title}</title>
-	<script src="js/prism.js"></script>
 </svelte:head>
 
 <div class="post">
