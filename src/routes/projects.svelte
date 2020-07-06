@@ -36,9 +36,6 @@
 </script>
 
 <style>
-  h3 {
-    padding: 1rem 1rem 0;
-  }
   a {
     text-decoration: none;
     display: inline-block;
