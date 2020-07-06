@@ -98,8 +98,6 @@
   }
 </style>
 
-<h3>Projects</h3>
-
 <div class="grid" class:dark={$theme === 'dark'}>
 {#each projects as project}
   <div class="project">
