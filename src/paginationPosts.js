@@ -8,18 +8,18 @@ export default (posts) => {
 	
 	const paginatedPosts = []
 	// Iterate if page more than 1
-	for (let i = 0; i < PAGE; i++) {
-		const arrayStart = LIMIT * i - LIMIT
-		const arrayEnd = LIMIT * i
+	for (let i = 1; i <= PAGE; i++) {
+		const arrOffset = LIMIT * i - LIMIT
+		const arrLimit = LIMIT * i
 
 		paginatedPosts.push([
 			...posts
 				// Get by offset position
 				.filter((val, index) => {
-					return index > arrayStart && index <= arrayEnd
+					return index > (arrOffset - 1) && index <= (arrLimit - 1)
 				})
 		])
 	}
-	console.log()
+
 	return PAGE == 1 ? [[...posts]] : paginatedPosts
 }
