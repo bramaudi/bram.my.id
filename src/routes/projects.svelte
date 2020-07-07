@@ -1,9 +1,16 @@
 <script>
-  import { afterUpdate } from 'svelte';
+  import { onMount, afterUpdate } from 'svelte';
 	import { theme } from './../stores.js';
 	import Github from './../components/svg/github.svelte';
 	import Link from './../components/svg/link.svelte';
   import projects from '../projects.json';
+  let Isotope
+  
+  onMount(async () => {
+    const module = await import('isotope-layout')
+    Isotope = module.default
+    runIsotope()
+  })
 
   afterUpdate(() => {
     runIsotope()
@@ -11,7 +18,7 @@
 
   function runIsotope() {
     const grid = document.querySelector('.grid')
-    const masonry = new Isotope(grid, {
+    Isotope && new Isotope(grid, {
       itemSelector: '.grid-item',
       percentPosition: true,
       masonry: {
@@ -24,7 +31,6 @@
 
 <sapper:head>
   <title>Projects</title>
-  <script src="/js/isotope.pkgd.min.js"></script>
 </sapper:head>
 
 <style>

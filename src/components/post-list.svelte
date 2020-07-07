@@ -2,17 +2,24 @@
 	import FullPost from './post/full-post.svelte';
 	import QuickPost from './post/quick-post.svelte';
   import Quote from './post/quote.svelte';
-  import { beforeUpdate, afterUpdate } from 'svelte';
+  import { onMount, afterUpdate } from 'svelte';
   import { theme } from '../stores.js';
   export let posts
+  let Isotope
   
+  onMount(async () => {
+    const module = await import('isotope-layout')
+    Isotope = module.default
+    runIsotope()
+  })
+
   afterUpdate(() => {
     runIsotope()
   })
 
   function runIsotope() {
     const grid = document.querySelector('.grid')
-    const masonry = new Isotope(grid, {
+    Isotope && new Isotope(grid, {
       itemSelector: '.grid-item',
       percentPosition: true,
       masonry: {
@@ -22,10 +29,6 @@
     })
   }
 </script>
-
-<sapper:head>
-  <script src="/js/isotope.pkgd.min.js"></script>
-</sapper:head>
 
 <div class:dark={$theme === 'dark'}>
 	{#if !posts.length}
