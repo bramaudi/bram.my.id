@@ -28,20 +28,17 @@
 	}
 
 	nav {
-    max-width: 55rem;
     margin: auto;
 		padding: 0;
   }
 
 	ul {
 		display: flex;
-		font-weight: 300;
+		font-weight: bold;
 		padding: 0 1rem;
 		margin: 1rem 1rem 0;
 		border-radius: 10px;
-		background-color: #246655;
 		color: #fff;
-		border: 1px solid #fff;
 	}
 
 	/* clearfix */
@@ -54,6 +51,14 @@
 	li {
 		display: block;
 		float: left;
+	}
+
+	li:first-child {
+		margin-left: auto;
+	}
+
+	li:last-child {
+		margin-right: auto;
 	}
 
 	[aria-current] {
@@ -78,36 +83,8 @@
 		display: block;
 	}
 
-  li:last-child {
-    margin-left: auto;
-  }
-
 	span {
 		cursor: pointer;
-	}
-
-	ul {
-		background: linear-gradient(270deg, #246655, #243566, #66245f, #662424, #716d0f);
-		background-size: 1000% 1000%;
-		-webkit-animation: gradiasi 15s ease infinite;
-		-moz-animation: gradiasi 15s ease infinite;
-		animation: gradiasi 15s ease infinite;
-	}
-
-	@-webkit-keyframes gradiasi {
-		0%{background-position:0% 50%}
-		50%{background-position:100% 50%}
-		100%{background-position:0% 50%}
-	}
-	@-moz-keyframes AnimationName {
-		0%{background-position:0% 50%}
-		50%{background-position:100% 50%}
-		100%{background-position:0% 50%}
-	}
-	@keyframes AnimationName {
-		0%{background-position:0% 50%}
-		50%{background-position:100% 50%}
-		100%{background-position:0% 50%}
 	}
 
 	/* Dark */
