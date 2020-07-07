@@ -27,23 +27,6 @@
   <script src="/js/isotope.pkgd.min.js"></script>
 </sapper:head>
 
-<style>
-  .grid {
-    margin: 1rem auto 0;
-    padding: 0
-  }
-  :global(.grid-item) {
-    width: 100%;
-  }
-  @media (min-width: 784px) {
-    .grid {
-      margin: 1rem auto;
-      padding: 0 0 0 15px;
-    }
-    :global(.grid-item) { width: calc(50% - 20px); }
-  }
-</style>
-
 <div class:dark={$theme === 'dark'}>
 	{#if !posts.length}
 		<div class="wrapper">There is no posts found.</div>

@@ -88,6 +88,14 @@ h3.subtitle {
   color: #333
 }
 
+.grid {
+  margin: 1rem auto 0;
+  padding: 0
+}
+.grid-item {
+  width: 100%;
+}
+
 @media (min-width: 400px) {
 	body {
 		font-size: 16px;
@@ -99,4 +107,9 @@ h3.subtitle {
     margin: 1rem;
     padding: 20px;
   }
+  .grid {
+    margin: 1rem auto;
+    padding: 0 0 0 15px;
+  }
+  .grid-item { width: calc(50% - 20px); }
 }

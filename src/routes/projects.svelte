@@ -1,39 +1,31 @@
-<svelte:head>
-  <title>Projects</title>
-</svelte:head>
-
 <script>
-  import { onMount } from 'svelte';
-  import MagicGrid from 'magic-grid';
+  import { afterUpdate } from 'svelte';
 	import { theme } from './../stores.js';
 	import Github from './../components/svg/github.svelte';
 	import Link from './../components/svg/link.svelte';
   import projects from '../projects.json';
 
-  onMount(() => {
-    if (window.matchMedia( "(min-width: 784px)" ).matches) {
-      // Define static height to fix magicGrid
-      const el = document.querySelector('.grid').children
-      for (let i = 0; i < el.length; i++) {
-        el[i].style.height = (el[i].clientHeight + 20)+'px'
-      }
-  
-      execGrid()
-    }
+  afterUpdate(() => {
+    runIsotope()
   })
 
-  function execGrid() {
-    let magicGrid = new MagicGrid({
-      container: '.grid',
-      static: true,
-      animate: true,
-      useMin: true,
-      gutter: 10
+  function runIsotope() {
+    const grid = document.querySelector('.grid')
+    const masonry = new Isotope(grid, {
+      itemSelector: '.grid-item',
+      percentPosition: true,
+      masonry: {
+        columnWidth: '.grid-item',
+        gutter: 10
+      }
     })
-
-    magicGrid.listen()
   }
 </script>
+
+<sapper:head>
+  <title>Projects</title>
+  <script src="/js/isotope.pkgd.min.js"></script>
+</sapper:head>
 
 <style>
   a {
@@ -54,6 +46,7 @@
 
   .grid {
     padding-top: 1rem;
+    margin-bottom: 2rem;
   }
   .project {
     width: 100%;
@@ -98,7 +91,7 @@
 
 <div class="grid" class:dark={$theme === 'dark'}>
 {#each projects as project}
-  <div class="project">
+  <div class="grid-item project">
     <div class="p-logo">
       <img src={project.logo} alt="Logo">
     </div>
