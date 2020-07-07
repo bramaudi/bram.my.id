@@ -2,6 +2,8 @@ import all from '../../posts/**/*.md'
 import { parse } from 'path'
 import Prism from 'prismjs'
 
+let rawPosts = all
+
 const 	_slugify_strip_re = /[^\w\s-]/g;
 const _slugify_hyphenate_re = /[-\s]+/g;
 function slugify(s) {
@@ -20,7 +22,10 @@ function dateFormat(date) {
 const posts = []
 export const metaOnly = []
 
-all.map(({ metadata, html, filename }) => {
+// Sort by date
+rawPosts = rawPosts.sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
+
+rawPosts.map(({ metadata, html, filename }) => {
   // required to be a valid content
   const { type, tags, date } = metadata
 	// Set default tags if not defined
