@@ -40,6 +40,7 @@
     text-decoration: none;
     display: inline-block;
     padding: 0 5px;
+    margin: 0 5px 5px 0;
     border-radius: 5px;
     background: #ddd;
   }
