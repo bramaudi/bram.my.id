@@ -17,8 +17,8 @@
 </script>
 
 <script>
-  import PostList from '../../../components/post-list.svelte'
-  import Pagination from '../../../components/pagination.svelte'
+  import PostList from '../../../components/post-list.svelte';
+  import Pagination from '../../../components/pagination.svelte';
   export let posts
   export let tags
   export let query
@@ -29,14 +29,6 @@
 <title>Tags "{tags}"</title>
 </svelte:head>
 
-<style>
-  h3 {
-    padding: 1.5rem 1rem .5rem
-  }
-</style>
-
-<h3>Tags "{tags}"</h3>
-
+<h3 class="subtitle">Tags "{tags}"</h3>
 <PostList posts={posts[current -1]} />
-
 <Pagination {current} count={posts.length} link="blog/tags/{tags}" />

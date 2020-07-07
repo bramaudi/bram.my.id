@@ -71,6 +71,18 @@ a {
   font-style: italic;
 }
 
+h3.subtitle::before {
+  content: '#';
+  margin-right: 5px;
+  color: #a5283a;
+}
+h3.subtitle {
+  text-align: center;
+  padding: 1rem 0 0;
+  font-size: large;
+  color: #333
+}
+
 @media (min-width: 400px) {
 	body {
 		font-size: 16px;

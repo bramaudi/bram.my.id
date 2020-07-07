@@ -94,6 +94,13 @@
   .quote {
     border-color: #454545;
     box-shadow: inset 0 0 20px 5px #222;
+	}
+	
+	h3.subtitle:before {
+    color: cadetblue
+  }
+  h3.subtitle {
+    color: #aaa
   }
 	</style>
 	{/if}
