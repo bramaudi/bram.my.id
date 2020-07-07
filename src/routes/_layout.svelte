@@ -1,9 +1,9 @@
 <script>
-	import { onMount } from 'svelte'
-	import { theme } from '../stores.js'
-	import BackToTop from '../components/back-to-top.svelte'
-	import Nav from '../components/nav.svelte';
-	import Preloading from '../components/preloading.svelte'
+	import { onMount } from 'svelte';
+	import { theme } from '../stores.js';
+	import BackToTop from '../components/back-to-top.svelte';
+	import Nav from '../components/nav.svelte';;
+	import Preloading from '../components/preloading.svelte';
 
 	onMount(() => {
 		const ls = window.localStorage

@@ -21,7 +21,7 @@
   }
 </style>
 
-<div class="post">
+<div class="grid-item post">
   {#if post.title}
     <h3>{post.title}</h3>
   {/if}

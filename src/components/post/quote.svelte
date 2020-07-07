@@ -25,7 +25,7 @@
   }
 </style>
 
-<div class="quote" class:dark={$theme === 'dark'}>
+<div class="grid-item quote" class:dark={$theme === 'dark'}>
   <div class="date">{post.date}</div>
 
   " <em>{(post.html).replace(/<(.+?)>/g, '')}</em> "

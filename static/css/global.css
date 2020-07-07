@@ -50,9 +50,14 @@ a {
   background: #fff;
 }
 
+.posts {
+  padding: 1rem;
+}
+
 .post,.quote,.quick {
   border-radius: 10px;
   padding: 20px;
+  margin-bottom: 1rem;
   background: #fff
 }
 .quote {
