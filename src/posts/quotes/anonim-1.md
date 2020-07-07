@@ -2,7 +2,7 @@
 type: quote
 date: 2020-07-07 16:25:04
 author: Anonim
-tags: [guyon]
+tags: [joke]
 ---
 
 Yaelah mas, bikin gitu doang aja mahal amat.
