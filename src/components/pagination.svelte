@@ -34,7 +34,6 @@
   
   @media (min-width: 784px) {
     div {
-      width: auto;
       padding: 0 1rem;
     }
   }
