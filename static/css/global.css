@@ -111,5 +111,8 @@ h3.subtitle {
     margin: 1rem auto;
     padding: 0 0 0 15px;
   }
-  .grid-item { width: calc(50% - 20px); }
+  .grid-item {
+    width: calc(50% - 20px);
+    margin-bottom: 10px;
+  }
 }
