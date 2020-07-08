@@ -28,8 +28,8 @@ rawPosts = rawPosts.sort((a, b) => new Date(b.metadata.date) - new Date(a.metada
 rawPosts.map(({ metadata, html, filename }) => {
   // required to be a valid content
   const { type, tags, date } = metadata
-	// Set default tags if not defined
-	metadata.tags = tags || ['uncategorized']
+	// Set default tags if not defined & if not quote
+	metadata.tags = type !== 'quote' ? tags || ['uncategorized'] : tags || []
 	// Format date
 	metadata.date = dateFormat(date)
 
