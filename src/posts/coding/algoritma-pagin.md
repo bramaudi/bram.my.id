@@ -1,18 +1,21 @@
 ---
-type: post
-title: "Algoritma Pagination"
-date: 2020-05-11T11:11:35+07:00
-summary: "Mempelajari logika pembuatan pagination / penomoran untuk tiap halaman"
+type: quick
+title: "Pagination in Nutshell"
+date: 2020-07-12 00:26:00
+# summary: "Mempelajari logika pembuatan pagination / penomoran untuk tiap halaman"
 tags: [algoritma]
-draft: true
 ---
 
-Untuk membuat pagination membutuhkan properti penting berikut sebagai kunci untuk memudahkan funsional pagination itu sendiri.
+Sistem dasar pagination adalah dengan menggunakan teknik **offset** & **limit** untuk mendapatkan data dengan urutan yang diinginkan, *offset* sebagai titik awal data dan *limit* adalah batas data tampil.
 
-- **count** - jumlah data
-- **limit** - batas data per halaman / per page.
-- Progress...
+``` php
+$total = 30; // total banyak data
+$get = 1; // posisi tujuan, default: 1 / halaman pertama 
+$limit = 10; // data per halaman
+$offset = $limit * $get - $limit; // 10 * 1 - 10 = 10
+$page = ceil($total / $limit); // jumlah halaman => 3 halaman
+```
 
-Berikut untuk contoh kasusnya, menggunakan Javascript:
+Contoh kasus implementasi menggunakan Javascript:
 [Live Demo](https://Pagination--bramaudi.repl.co)
 [Source](https://repl.it/@bramaudi/Pagination)

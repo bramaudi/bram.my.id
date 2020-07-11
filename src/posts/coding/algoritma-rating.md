@@ -5,7 +5,7 @@ date: 2020-07-02 08:56:20
 tags: [algoritma]
 ---
 
-> **Rumus**: `total nilai` / `kuantitas`
+Logika untuk mendapatkan rating bisa diselesaikan cukup dengan rumus matematika sederhana yakni `total nilai` dari data dibagi `kuantitas` dari banyaknya data.
 
 ``` javascript
 const data = [4, 3, 3, 4, 2, 5, 2, 3, 5, 1]
