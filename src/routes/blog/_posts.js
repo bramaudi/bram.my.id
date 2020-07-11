@@ -1,6 +1,7 @@
 import all from '../../posts/**/*.md'
 import { parse } from 'path'
 import Prism from 'prismjs'
+const loadLanguages = require('prismjs/components/index')
 
 let rawPosts = all
 
@@ -47,6 +48,7 @@ rawPosts.map(({ metadata, html, filename }) => {
 
 	fences && fences.map(code => {
 		const partData = code.match(regexOne)
+		loadLanguages([partData[2]])
 		const highlighted = Prism.highlight(decodeEntities(partData[4]), Prism.languages[partData[2]], partData[2])
 		const preModified = (html.replace(partData[4], highlighted)).replace(
 			'<pre>',
