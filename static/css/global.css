@@ -60,6 +60,9 @@ a {
   margin-bottom: 1rem;
   background: #fff
 }
+.post .content a, .quick .content a { color: #a5283a;}
+.post .content em, .quick .content em { color: brown;}
+.post .content strong, .quick .content strong { color: maroon;}
 .quote {
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   line-height: 1.6rem;

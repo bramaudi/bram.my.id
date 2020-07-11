@@ -89,7 +89,11 @@
   
   .post,.quote,.quick {
     background: #333 !important
-  }
+	}
+	
+	.post .content a, .quick .content a { color: cadetblue !important;}
+	.post .content em, .quick .content em { color: aquamarine !important;}
+	.post .content strong, .quick .content strong { color: darkcyan !important;}
 
   .quote {
     border-color: #454545;
