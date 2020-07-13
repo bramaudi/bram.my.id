@@ -61,8 +61,17 @@ a {
   background: #fff
 }
 .post .content a, .quick .content a { color: #a5283a;}
-.post .content em, .quick .content em, .quote em em { color: brown;}
-.post .content strong, .quick .content strong, .quote em strong { color: maroon;}
+
+.post .content em,
+.quick .content em,
+.quote em em,
+.markdown-body em { color: brown;}
+
+.post .content strong,
+.quick .content strong,
+.quote em strong,
+.markdown-body strong { color: maroon;}
+
 .quote {
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   line-height: 1.6rem;

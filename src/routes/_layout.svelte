@@ -81,7 +81,11 @@
 	}
 	pre > code {
 		background: inherit !important;
-  }
+	}
+	
+	hr {
+		border-color: #444 !important;
+	}
 
   .wrapper {
     background: #333
@@ -92,8 +96,16 @@
 	}
 	
 	.post .content a, .quick .content a { color: cadetblue !important;}
-	.post .content em, .quick .content em, .quote em em  { color: aquamarine !important;}
-	.post .content strong, .quick .content strong, .quote em strong { color: darkcyan !important;}
+
+	.post .content em,
+	.quick .content em,
+	.quote em em,
+	.markdown-body em { color: aquamarine !important;}
+
+	.post .content strong,
+	.quick .content strong,
+	.quote em strong,
+	.markdown-body strong { color: #3ad5d5 !important;}
 
   .quote {
     border-color: #454545;
