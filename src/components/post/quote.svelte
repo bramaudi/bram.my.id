@@ -17,7 +17,7 @@
     color: #a5283a
   }
   .author {
-    margin: -1.5rem 0 .5rem;
+    margin: .5rem 0;
     text-align: right;
   }
   .dark .tags a {
