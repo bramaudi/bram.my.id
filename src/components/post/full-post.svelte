@@ -1,18 +1,6 @@
 <script>
 	import Tags from './../tags.svelte';
   export let post
-
-  const makeExcerpt = (string, more = '...') => {
-    const substrString = string.substr(0, 160)
-    const count = string.split('')
-    let words = substrString.split(' ')
-    if (count[161] !== ' ') {
-      words[words.length - 1] = more
-      return words.join(' ')
-    } else {
-      return `${words.join(' ')} ${more}`
-    }
-  }
 </script>
 
 <style>
@@ -31,12 +19,8 @@
     <Tags tags={post.tags} />
   </div>
 
-  {#if post.summary}
-    <div class="content">
-      {@html makeExcerpt(post.summary)}
-      <a rel='prefetch' href='blog/{post.slug}'>Read more &raquo;</a>
-    </div>
-  {:else}
-    <a rel='prefetch' href='blog/{post.slug}'>Read more ...</a>
-  {/if}
+  <div class="content">
+    {#if post.summary}{post.summary}{/if}
+    <a rel='prefetch' href='blog/{post.slug}'>Read more &raquo;</a>
+  </div>
 </div>
