@@ -15,8 +15,23 @@
 
 <script>
   import { theme } from '../../stores.js'
-	import Tags from '../../components/tags.svelte'
-	export let post;
+  import Tags from '../../components/tags.svelte'
+  import { onMount } from 'svelte'
+  export let post;
+  
+  onMount(() => {
+    var disqus_config = function () {
+    this.page.url = document.URL;
+    this.page.identifier = post.slug;
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://bramaudi.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+  })
 </script>
 
 <style>
@@ -37,6 +52,10 @@
   }
   .markdown-body {
     margin-top: 1.3rem;
+  }
+  #disqus_thread {
+    margin-top: 2rem;
+    border-top: 1px dotted #aaa;
   }
   .dark .heading {
     border-color: #555
@@ -64,4 +83,6 @@
   <div class='markdown-body'>
     {@html post.html}
   </div>
+
+  <div id="disqus_thread"></div>
 </div>
