@@ -14,6 +14,7 @@
 </script>
 
 <script>
+  import { theme } from '../../stores.js'
 	import Tags from '../../components/tags.svelte'
 	export let post;
 </script>
@@ -37,6 +38,9 @@
   .markdown-body {
     margin-top: 1.3rem;
   }
+  .dark .heading {
+    border-color: #555
+  }
 
   @media (min-width: 784px) {
     .post {
@@ -50,7 +54,7 @@
 	<title>{post.title}</title>
 </svelte:head>
 
-<div class="post">
+<div class="post" class:dark={$theme === 'dark'}>
   <div class="heading">
     <div class="title">{post.title}</div>
     <div class="date">{post.date}</div>

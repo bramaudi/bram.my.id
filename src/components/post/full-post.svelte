@@ -1,4 +1,5 @@
 <script>
+  import { theme } from '../../stores.js'
 	import Tags from './../tags.svelte';
   export let post
 </script>
@@ -23,9 +24,15 @@
     font-size: x-large;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
+  .dark {
+    border-color: #555
+  }
+  .dark h3 {
+    border-color: #aaa
+  }
 </style>
 
-<div class="grid-item post">
+<div class="grid-item post" class:dark={$theme === 'dark'}>
   {#if post.title}
   <a rel='prefetch' href='blog/{post.slug}'>
     <h3>{post.title}</h3>
