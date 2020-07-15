@@ -20,9 +20,7 @@
 
 <style>
   .post {
-    width: calc(100% - 30px);
-    float: unset;
-    margin: 1rem auto;
+    margin: 1rem 0;
   }
   .title {
     font-weight: bold;
@@ -32,6 +30,13 @@
   }
   .markdown-body {
     margin-top: 1.3rem;
+  }
+
+  @media (min-width: 784px) {
+    .post {
+      width: calc(100% - 30px);
+      float: unset;
+    }
   }
 </style>
 
