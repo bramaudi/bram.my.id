@@ -7,11 +7,29 @@
   .meta {
     margin: 10px 0;
   }
+  .post {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 2rem;
+    background: honeydew;
+    border-left: 8px dashed #aaa;
+  }
+  a {
+    text-decoration: none;
+  }
+  h3 {
+    display: inline;
+    border-bottom: 1px dotted #222;
+    font-size: x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
 </style>
 
 <div class="grid-item post">
   {#if post.title}
+  <a rel='prefetch' href='blog/{post.slug}'>
     <h3>{post.title}</h3>
+  </a>
   {/if}
 
   <div class="meta">
@@ -21,6 +39,5 @@
 
   <div class="content">
     {#if post.summary}{post.summary}{/if}
-    <a rel='prefetch' href='blog/{post.slug}'>Read more &raquo;</a>
   </div>
 </div>

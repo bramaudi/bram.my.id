@@ -22,7 +22,13 @@
   .post {
     margin: 1rem 0;
   }
+  .heading {
+    padding-left: 1rem;
+    margin-bottom: 2.5rem;
+    border-left: 10px dotted #aaa;
+  }
   .title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     font-size: xx-large;
     margin: 0 0 .4rem;
