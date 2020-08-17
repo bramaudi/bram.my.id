@@ -1,4 +1,7 @@
 <script>
+import { onMount } from "svelte";
+
+
 let count = 5;
 
 const timer = setInterval(() => {
@@ -6,9 +9,11 @@ const timer = setInterval(() => {
 	!count && clearInterval(timer)
 }, 1000)
 
-setTimeout(() => {
-	window.location.href = 'https://bramaudi.github.io'
-}, 5000)
+onMount(() => {
+	setTimeout(() => {
+		window.location.href = 'https://bramaudi.github.io'
+	}, 5000)
+})
 </script>
 
 This site has been moved to <a href="https://bramaudi.github.io" rel="dofollow">https://bramaudi.github.io</a>.
