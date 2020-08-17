@@ -1,43 +1,16 @@
-<script context="module">
-	import SearchForm from './../components/search-form.svelte';
-	export function preload({ params, query }) {
-		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
-      return { posts, query };
-		});
-	}
-</script>
-
 <script>
-  import { theme } from '../stores.js'
-	import PostList from '../components/post-list.svelte'
-	import Pagination from '../components/pagination.svelte'
-	export let posts
-	export let query
-	$: current = query.page || 1
-  let keyword = ''
+let count = 5;
 
-  function getKeyword(e) {
-    keyword = e.detail.keyword
-  }
-  
-	function filteredPosts(posts, keyword) {
-		return posts.filter(post => {
-			post = post.title ? post['title'].toLowerCase() : post['html'].toLowerCase()
-			return post.indexOf(keyword) > -1; 
-		});
-	}
+const timer = setInterval(() => {
+	count -= 1
+	!count && clearInterval(timer)
+}, 1000)
+
+setTimeout(() => {
+	window.location.href = 'https://bramaudi.github.io'
+}, 5000)
 </script>
 
-<svelte:head>
-	<title>bramaudi</title>
-</svelte:head>
-
-<SearchForm {keyword} on:connect={getKeyword} />
-
-{#if keyword === ''}
-	<PostList posts={posts[current -1]} />
-{:else}
-	<PostList posts={filteredPosts(posts[current -1], keyword)} />
-{/if}
-
-<Pagination {current} count={posts.length} />
+This site has been moved to <a href="https://bramaudi.github.io" rel="dofollow">https://bramaudi.github.io</a>.
+<br/>
+Automatically redirecting on {count} seconds...
